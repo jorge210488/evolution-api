@@ -12,6 +12,9 @@ jobs:
     permissions:
       contents: read
       packages: write
+    env:
+      DATABASE_PROVIDER: postgresql  
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
