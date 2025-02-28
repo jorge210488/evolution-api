@@ -13,8 +13,7 @@ jobs:
       contents: read
       packages: write
     env:
-      DATABASE_PROVIDER: postgresql  
-
+      DOTENV_SECRET: ${{ secrets.DOCKER_ENV_FILE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
