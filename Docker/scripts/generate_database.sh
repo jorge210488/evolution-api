@@ -10,7 +10,8 @@ if [[ "$DATABASE_PROVIDER" == "postgresql" || "$DATABASE_PROVIDER" == "mysql" ]]
     export DATABASE_URL
     echo "Generating database for $DATABASE_PROVIDER"
     echo "Database URL: $DATABASE_URL"
-    npm run db:generate
+    npx prisma generate --schema ./prisma/schema.prisma
+
     if [ $? -ne 0 ]; then
         echo "Prisma generate failed"
         exit 1
