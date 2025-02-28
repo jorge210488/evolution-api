@@ -14,7 +14,8 @@ if (!DATABASE_PROVIDER) {
 let command = process.argv
   .slice(2)
   .join(' ')
-  .replace(/DATABASE_PROVIDER/g, databaseProviderDefault);
+  .replace(/DATABASE_PROVIDER/g, databaseProviderDefault)
+  .replace('prisma/postgresql-schema.prisma', 'prisma/schema.prisma');
 
 if (command.includes('rmdir') && existsSync('prisma\\migrations')) {
   try {
